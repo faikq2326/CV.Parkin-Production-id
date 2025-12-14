@@ -1604,7 +1604,7 @@
                 for (let path of musicPaths) {
                     try {
                         const testAudio = new Audio(path);
-                        testAudio.volume = 0.4;
+                        testAudio.volume = 1.0;
                         testAudio.preload = 'auto';
                         audio = testAudio;
                         console.log('Audio loaded from:', path);
