@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - CV.Parkin Production Jasa Sound System Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== VARIABLES & RESET ===== */
+        :root {
+            --primary: #ff6b35;
+            --secondary: #1a1a2e;
+            --accent: #0f3460;
+            --light: #f8f9fa;
+            --dark: #16213e;
+            --gray: #e9ecef;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--light);
+            background-color: var(--secondary);
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            animation: fadeInUp 1s ease;
+            text-decoration: none;
+            -webkit-tap-highlight-color: rgba(255, 107, 53, 0.3);
+        }
+
+        .btn:hover {
+            background: #ff8535;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* ===== BACKGROUND ANIMATION ===== */
+        #background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .sound-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            animation: pulse 8s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0.15;
+            }
+        }
+
+        .equalizer-bar {
+            position: absolute;
+            bottom: 0;
+            width: 10px;
+            background: var(--primary);
+            animation: equalizer 1.5s infinite ease-in-out;
+            opacity: 0.3;
+        }
+
+        @keyframes equalizer {
+            0%, 100% {
+                height: 10px;
+            }
+            50% {
+                height: 80px;
+            }
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(26, 26, 46, 0.95);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background: rgba(26, 26, 46, 0.98);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .logo span {
+            color: var(--light);
+        }
+
+        /* Piringan Hitam Simpel di Navbar */
+        .vinyl-player-simple {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 2;
+            -webkit-tap-highlight-color: rgba(255, 107, 53, 0.2);
+        }
+
+        .vinyl-simple {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: 
+                radial-gradient(circle at 30% 30%, #333 0%, #000 70%),
+                repeating-radial-gradient(
+                    circle at center,
+                    transparent 0px,
+                    transparent 3px,
+                    rgba(255,255,255,0.05) 3px,
+                    rgba(255,255,255,0.05) 4px
+                );
+            position: relative;
+            box-shadow: 
+                0 0 10px rgba(0,0,0,0.8),
+                inset 0 0 15px rgba(0,0,0,0.9);
+            transition: transform 0.5s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .vinyl-simple.playing {
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .vinyl-center-simple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(255,107,53,0.8);
+        }
+
+        .vinyl-label-simple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, #ff6b35, #ff8535);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 8px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+            padding: 2px;
+        }
+
+        .music-text {
+            font-size: 0.85rem;
+            color: var(--light);
+            white-space: nowrap;
+            opacity: 0.8;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .vinyl-player-simple:hover .music-text {
+            color: var(--primary);
+            opacity: 1;
+        }
+
+        .vinyl-player-simple:hover .vinyl-simple {
+            box-shadow: 
+                0 0 15px rgba(255,107,53,0.4),
+                inset 0 0 15px rgba(0,0,0,0.9);
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin-right: 20px;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--light);
+            cursor: pointer;
+            z-index: 2;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Efek visual ketika musik diputar */
+        .music-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 107, 53, 0.2);
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .music-pulse.active {
+            animation: pulseEffect 1.5s ease-out infinite;
+        }
+
+        @keyframes pulseEffect {
+            0% {
+                width: 45px;
+                height: 45px;
+                opacity: 0.7;
+            }
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+
+        /* ===== BREADCRUMB ===== */
+        .breadcrumb {
+            padding: 20px 0;
+            margin-top: 80px;
+        }
+
+        .breadcrumb-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a {
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb-separator {
+            margin: 0 10px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .breadcrumb-current {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* ===== ABOUT HERO ===== */
+        #about-hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        #about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/sound2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+        
+        /* Overlay untuk meningkatkan keterbacaan teks */
+        #about-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                        rgba(26, 26, 46, 0.85) 0%, 
+                        rgba(15, 52, 96, 0.75) 100%);
+            z-index: -1;
+        }
+
+        #about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        #about-hero p {
+            font-size: 1.3rem;
+            animation: fadeInUp 1s ease;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* ===== VISION MISSION ===== */
+        #vision-mission {
+            background: rgba(15, 52, 96, 0.3);
+        }
+
+        .vm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .vm-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            height: 100%;
+        }
+
+        .vm-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .vm-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* ===== OUR TEAM ===== */
+        #our-team {
+            background: rgba(22, 33, 62, 0.5);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-img img {
+            transform: scale(1.1);
+        }
+
+        .team-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+
+        .team-role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .team-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            color: var(--light);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .team-social a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* ===== HISTORY ===== */
+        #history {
+            background: rgba(15, 52, 96, 0.3);
+        }
+
+        .history-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--primary);
+            opacity: 0.5;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-year {
+            flex: 1;
+            text-align: center;
+            padding: 0 30px;
+        }
+
+        .year {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content {
+            flex: 2;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid var(--secondary);
+        }
+
+        /* ===== CTA SECTION ===== */
+        #cta {
+            background: rgba(22, 33, 62, 0.5);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        #cta h2 {
+            margin-bottom: 20px;
+        }
+
+        #cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .history-timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                flex-direction: row !important;
+                align-items: flex-start;
+            }
+            
+            .timeline-year {
+                flex: 0 0 100px;
+                text-align: left;
+                padding: 0;
+                margin-right: 30px;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+                order: 3;
+            }
+            
+            .vinyl-player-simple {
+                order: 2;
+                margin-left: auto;
+                margin-right: 15px;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: var(--secondary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px 0;
+                transform: translateX(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                z-index: 1;
+                margin: 0;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.3rem;
+            }
+            
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .music-text {
+                display: none;
+            }
+            
+            .vinyl-simple {
+                width: 42px;
+                height: 42px;
+            }
+            
+            .vm-grid, .team-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .vm-card, .team-card {
+                padding: 25px 20px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vinyl-simple {
+                width: 40px;
+                height: 40px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .timeline-year {
+                flex: 0 0 80px;
+            }
+            
+            .year {
+                font-size: 1rem;
+                padding: 6px 15px;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div id="background-animation"></div>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">CV.Parkin<span>Production</span></a>
+                
+                <div class="nav-content">
+                    <!-- Piringan Hitam Simpel -->
+                    <div class="vinyl-player-simple" id="vinylPlayerSimple">
+                        <div class="vinyl-simple" id="vinylSimple">
+                            <div class="vinyl-label-simple">IP</div>
+                            <div class="vinyl-center-simple"></div>
+                            <div class="music-pulse" id="musicPulse"></div>
+                        </div>
+                        <div class="music-text" id="musicText">Klik untuk musik!</div>
+                    </div>
+                    
+                    <ul class="nav-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="about.html" class="active">Tentang</a></li>
+                        <li><a href="services.html">Layanan</a></li>
+                        <li><a href="gallery.html">Galeri</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                    </ul>
+                    
+                    <div class="mobile-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <a href="index.html">Beranda</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Tentang Kami</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Hero -->
+    <section id="about-hero">
+        <div class="container">
+            <h1>Tentang CV.Parkin Prodction</h1>
+            <p>Lebih dari 10 tahun mengabdikan diri dalam industri sound system dengan komitmen untuk memberikan pengalaman audio terbaik untuk setiap acara.</p>
+            <a href="#cta" class="btn">Konsultasi Gratis</a>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section id="vision-mission">
+        <div class="container">
+            <h2>Visi & Misi Kami</h2>
+            <div class="vm-grid">
+                <div class="vm-card">
+                    <div class="vm-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Visi</h3>
+                    <p>Menjadi penyedia jasa sound system terdepan di Indonesia dengan kualitas audio terbaik dan layanan profesional yang memuaskan setiap klien.</p>
+                </div>
+                <div class="vm-card">
+                    <div class="vm-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Misi</h3>
+                    <p>1. Menyediakan peralatan sound system berkualitas tinggi<br>
+                       2. Memberikan layanan yang cepat dan responsif<br>
+                       3. Meningkatkan kompetensi tim secara berkelanjutan<br>
+                       4. Membangun hubungan jangka panjang dengan klien</p>
+                </div>
+                <div class="vm-card">
+                    <div class="vm-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Nilai Kami</h3>
+                    <p>Professionalisme, Kejujuran, Inovasi, Kepuasan Pelanggan, dan Komitmen terhadap Kualitas dalam setiap proyek yang kami tangani.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History -->
+    <section id="history">
+        <div class="container">
+            <h2>Sejarah Perjalanan</h2>
+            <div class="history-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">
+                        <span class="year">2013</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Awal Mula</h3>
+                        <p>CV.Parkin Production memulai usaha sound system kecil-kecilan dengan peralatan sederhana untuk acara lokal di lingkungan sekitar.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">
+                        <span class="year">2016</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Ekspansi Peralatan</h3>
+                        <p>Melakukan investasi besar pada peralatan profesional dan merekrut tim teknis pertama. Mulai menangani acara pernikahan dan seminar.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">
+                        <span class="year">2019</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Ekspansi Pasar</h3>
+                        <p>Memperluas jangkauan ke acara skala besar seperti konser dan festival. Menerima sertifikasi sebagai penyedia sound system profesional.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">
+                        <span class="year">2023</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Digital Transformation</h3>
+                        <p>Meluncurkan website resmi dan sistem booking online. Menangani lebih dari 200 acara per tahun dengan tim 10+ profesional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta">
+        <div class="container">
+            <h2>Siap Bekerja Sama?</h2>
+            <p>Percayakan acara Anda pada tim profesional kami. Kami siap memberikan solusi sound system terbaik sesuai kebutuhan Anda.</p>
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="contact.html" class="btn">Hubungi Kami</a>
+                <a href="gallery.html" class="btn btn-secondary">Lihat Galeri Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">CV.Parkin Production</div>
+            <p>Jasa Sound System Profesional untuk Semua Jenis Acara</p>
+            <div class="copyright">
+                &copy; 2025 CV.Parkin Production Sound System. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/6285353222333" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Create background animation elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const background = document.getElementById('background-animation');
+            
+            // Create sound waves
+            for (let i = 0; i < 5; i++) {
+                const wave = document.createElement('div');
+                wave.classList.add('sound-wave');
+                wave.style.left = `${Math.random() * 100}%`;
+                wave.style.top = `${Math.random() * 100}%`;
+                wave.style.animationDelay = `${i * 2}s`;
+                background.appendChild(wave);
+            }
+            
+            // Create equalizer bars
+            for (let i = 0; i < 20; i++) {
+                const bar = document.createElement('div');
+                bar.classList.add('equalizer-bar');
+                bar.style.left = `${i * 5}%`;
+                bar.style.animationDelay = `${Math.random() * 2}s`;
+                background.appendChild(bar);
+            }
+            
+            // =============================================
+            // SIMPLE VINYL PLAYER
+            // =============================================
+            
+            // Elements
+            const vinylPlayer = document.getElementById('vinylPlayerSimple');
+            const vinylSimple = document.getElementById('vinylSimple');
+            const musicText = document.getElementById('musicText');
+            const musicPulse = document.getElementById('musicPulse');
+            
+            // Audio state
+            let audio = null;
+            let isPlaying = false;
+            
+            // Audio paths
+            const musicPaths = [
+                'sound/aku-iki-fullbass.mp3',
+                'sound/music.mp3',
+                './sound/fun-music.mp3'
+            ];
+            
+            // Fungsi untuk membuat audio element
+            function createAudio() {
+                if (audio) return audio;
+                
+                // Coba semua path
+                for (let path of musicPaths) {
+                    try {
+                        const testAudio = new Audio(path);
+                        testAudio.volume = 0.4;
+                        testAudio.preload = 'auto';
+                        audio = testAudio;
+                        console.log('Audio loaded from:', path);
+                        break;
+                    } catch (error) {
+                        console.log('Failed to load from:', path);
+                        continue;
+                    }
+                }
+                
+                return audio;
+            }
+            
+            // Setup audio events
+            function setupAudioEvents() {
+                if (!audio) return;
+                
+                audio.addEventListener('ended', function() {
+                    vinylSimple.classList.remove('playing');
+                    musicPulse.classList.remove('active');
+                    musicText.textContent = 'Putar lagi?';
+                    isPlaying = false;
+                    vinylSimple.style.boxShadow = '0 0 10px rgba(0,0,0,0.8), inset 0 0 15px rgba(0,0,0,0.9)';
+                });
+            }
+            
+            // Fungsi play/pause
+            function togglePlayPause() {
+                // Pastikan audio sudah dibuat
+                if (!audio) {
+                    audio = createAudio();
+                    setupAudioEvents();
+                }
+                
+                if (isPlaying) {
+                    // Pause musik
+                    audio.pause();
+                    vinylSimple.classList.remove('playing');
+                    musicPulse.classList.remove('active');
+                    musicText.textContent = 'Putar musik!';
+                    vinylSimple.style.boxShadow = '0 0 10px rgba(0,0,0,0.8), inset 0 0 15px rgba(0,0,0,0.9)';
+                } else {
+                    // Play musik
+                    try {
+                        audio.play().then(() => {
+                            vinylSimple.classList.add('playing');
+                            musicPulse.classList.add('active');
+                            musicText.textContent = 'Musik sedang diputar!';
+                            isPlaying = true;
+                            vinylSimple.style.boxShadow = '0 0 15px rgba(255,107,53,0.6), inset 0 0 15px rgba(0,0,0,0.9)';
+                            
+                            vinylPlayer.style.transform = 'scale(1.05)';
+                            setTimeout(() => {
+                                vinylPlayer.style.transform = 'scale(1)';
+                            }, 300);
+                            
+                        }).catch(error => {
+                            console.error('Play error:', error);
+                            musicText.textContent = 'Klik lagi untuk coba';
+                            audio = null;
+                            isPlaying = false;
+                        });
+                    } catch (error) {
+                        console.error('Error in togglePlayPause:', error);
+                        musicText.textContent = 'Error sistem audio';
+                        isPlaying = false;
+                    }
+                }
+            }
+            
+            // Event listener untuk vinyl player
+            vinylPlayer.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                vinylSimple.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    vinylSimple.style.transform = 'scale(1)';
+                }, 200);
+                
+                togglePlayPause();
+            });
+            
+            // Pre-create audio pada interaksi pertama
+            document.addEventListener('click', function initAudioOnInteraction() {
+                if (!audio) {
+                    audio = createAudio();
+                    setupAudioEvents();
+                }
+            }, { once: true });
+            
+            // =============================================
+            // MOBILE NAVIGATION
+            // =============================================
+            
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+                this.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav-content') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+            
+            // =============================================
+            // OTHER FUNCTIONALITY
+            // =============================================
+            
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Keyboard shortcut
+            document.addEventListener('keydown', function(e) {
+                if (e.code === 'Space' && !e.target.matches('input, textarea')) {
+                    e.preventDefault();
+                    togglePlayPause();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

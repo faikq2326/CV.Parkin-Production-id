@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan - CV.Parkin Production Jasa Sound System Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== VARIABLES & RESET ===== */
+        :root {
+            --primary: #ff6b35;
+            --secondary: #1a1a2e;
+            --accent: #0f3460;
+            --light: #f8f9fa;
+            --dark: #16213e;
+            --gray: #e9ecef;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--light);
+            background-color: var(--secondary);
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            animation: fadeInUp 1s ease;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            -webkit-tap-highlight-color: rgba(255, 107, 53, 0.3);
+        }
+
+        .btn:hover {
+            background: #ff8535;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* ===== BACKGROUND ANIMATION ===== */
+        #background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .sound-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            animation: pulse 8s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0.15;
+            }
+        }
+
+        .equalizer-bar {
+            position: absolute;
+            bottom: 0;
+            width: 10px;
+            background: var(--primary);
+            animation: equalizer 1.5s infinite ease-in-out;
+            opacity: 0.3;
+        }
+
+        @keyframes equalizer {
+            0%, 100% {
+                height: 10px;
+            }
+            50% {
+                height: 80px;
+            }
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(26, 26, 46, 0.95);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background: rgba(26, 26, 46, 0.98);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .logo span {
+            color: var(--light);
+        }
+
+        /* Piringan Hitam Simpel di Navbar */
+        .vinyl-player-simple {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 2;
+            -webkit-tap-highlight-color: rgba(255, 107, 53, 0.2);
+        }
+
+        .vinyl-simple {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: 
+                radial-gradient(circle at 30% 30%, #333 0%, #000 70%),
+                repeating-radial-gradient(
+                    circle at center,
+                    transparent 0px,
+                    transparent 3px,
+                    rgba(255,255,255,0.05) 3px,
+                    rgba(255,255,255,0.05) 4px
+                );
+            position: relative;
+            box-shadow: 
+                0 0 10px rgba(0,0,0,0.8),
+                inset 0 0 15px rgba(0,0,0,0.9);
+            transition: transform 0.5s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .vinyl-simple.playing {
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .vinyl-center-simple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(255,107,53,0.8);
+        }
+
+        .vinyl-label-simple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, #ff6b35, #ff8535);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 8px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+            padding: 2px;
+        }
+
+        .music-text {
+            font-size: 0.85rem;
+            color: var(--light);
+            white-space: nowrap;
+            opacity: 0.8;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .vinyl-player-simple:hover .music-text {
+            color: var(--primary);
+            opacity: 1;
+        }
+
+        .vinyl-player-simple:hover .vinyl-simple {
+            box-shadow: 
+                0 0 15px rgba(255,107,53,0.4),
+                inset 0 0 15px rgba(0,0,0,0.9);
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin-right: 20px;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--light);
+            cursor: pointer;
+            z-index: 2;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Efek visual ketika musik diputar */
+        .music-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 107, 53, 0.2);
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .music-pulse.active {
+            animation: pulseEffect 1.5s ease-out infinite;
+        }
+
+        @keyframes pulseEffect {
+            0% {
+                width: 45px;
+                height: 45px;
+                opacity: 0.7;
+            }
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+
+        /* ===== BREADCRUMB ===== */
+        .breadcrumb {
+            padding: 20px 0;
+            margin-top: 80px;
+        }
+
+        .breadcrumb-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a {
+            color: var(--light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb-separator {
+            margin: 0 10px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .breadcrumb-current {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* ===== SERVICES HERO ===== */
+        #services-hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        #services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/speaker.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+        
+        /* Overlay untuk meningkatkan keterbacaan teks */
+        #services-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                        rgba(26, 26, 46, 0.85) 0%, 
+                        rgba(15, 52, 96, 0.75) 100%);
+            z-index: -1;
+        }
+
+        #services-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        #services-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 1s ease;
+        }
+
+        /* ===== SERVICES CATEGORIES ===== */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .category-btn {
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            border-radius: 30px;
+            color: var(--light);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .category-btn:hover {
+            background: rgba(255, 107, 53, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .category-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        /* ===== SERVICES GRID ===== */
+        #services-details {
+            background: rgba(15, 52, 96, 0.3);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 35px 30px;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+            flex-grow: 1;
+        }
+
+        .service-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .price-note {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 5px;
+        }
+
+        /* ===== EQUIPMENT SHOWCASE ===== */
+        #equipment {
+            background: rgba(22, 33, 62, 0.5);
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .equipment-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .equipment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .equipment-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .equipment-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .equipment-card:hover .equipment-img img {
+            transform: scale(1.1);
+        }
+
+        .equipment-info {
+            padding: 25px 20px;
+        }
+
+        .equipment-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .equipment-specs {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .equipment-specs li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* ===== PROCESS ===== */
+        #process {
+            background: rgba(15, 52, 96, 0.3);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            counter-reset: step;
+        }
+
+        .process-step {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 35px 25px 25px;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .step-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        #testimonials {
+            background: rgba(22, 33, 62, 0.5);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            flex: 0 0 100%;
+            padding: 20px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            top: -15px;
+            left: -10px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .author-event {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .slider-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            color: var(--light);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            background: var(--primary);
+        }
+
+        /* ===== CTA SECTION ===== */
+        #services-cta {
+            background: rgba(15, 52, 96, 0.3);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        #services-cta h2 {
+            margin-bottom: 20px;
+        }
+
+        #services-cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .category-tabs {
+                justify-content: center;
+            }
+            
+            .service-card {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+                order: 3;
+            }
+            
+            .vinyl-player-simple {
+                order: 2;
+                margin-left: auto;
+                margin-right: 15px;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: var(--secondary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px 0;
+                transform: translateX(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                z-index: 1;
+                margin: 0;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.3rem;
+            }
+            
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .music-text {
+                display: none;
+            }
+            
+            .vinyl-simple {
+                width: 42px;
+                height: 42px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .service-card {
+                padding: 25px 20px;
+            }
+            
+            .service-icon {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+            
+            .category-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-btn {
+                width: 80%;
+                max-width: 300px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vinyl-simple {
+                width: 40px;
+                height: 40px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .service-features li {
+                font-size: 0.9rem;
+            }
+            
+            .service-price {
+                font-size: 1.3rem;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .testimonial-card {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div id="background-animation"></div>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">CV.Parkin<span>Production</span></a>
+                
+                <div class="nav-content">
+                    <!-- Piringan Hitam Simpel -->
+                    <div class="vinyl-player-simple" id="vinylPlayerSimple">
+                        <div class="vinyl-simple" id="vinylSimple">
+                            <div class="vinyl-label-simple">IP</div>
+                            <div class="vinyl-center-simple"></div>
+                            <div class="music-pulse" id="musicPulse"></div>
+                        </div>
+                        <div class="music-text" id="musicText">Klik untuk musik!</div>
+                    </div>
+                    
+                    <ul class="nav-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="about.html">Tentang</a></li>
+                        <li><a href="services.html" class="active">Layanan</a></li>
+                        <li><a href="gallery.html">Galeri</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                    </ul>
+                    
+                    <div class="mobile-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <a href="index.html">Beranda</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Layanan</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Hero -->
+    <section id="services-hero">
+        <div class="container">
+            <h1>Layanan Sound System Profesional</h1>
+            <p>Kami menyediakan berbagai layanan sound system untuk semua jenis acara. Dari pernikahan kecil hingga konser besar, kami memiliki solusi audio yang tepat untuk Anda.</p>
+            <a href="#services-cta" class="btn">Konsultasi Gratis</a>
+        </div>
+    </section>
+
+    <!-- Services Categories -->
+    <section id="services-categories">
+        <div class="container">
+            <h2>Kategori Layanan</h2>
+            <div class="category-tabs" id="categoryTabs">
+                <button class="category-btn active" data-category="all">Semua Layanan</button>
+                <button class="category-btn" data-category="wedding">Pernikahan</button>
+                <button class="category-btn" data-category="concert">Konser</button>
+                <button class="category-btn" data-category="corporate">Korporat</button>
+                <button class="category-btn" data-category="technical">Teknis</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Details -->
+    <section id="services-details">
+        <div class="container">
+            <div class="services-grid" id="servicesGrid">
+                <!-- Wedding Services -->
+                <div class="service-card" data-category="wedding">
+                    <div class="service-icon">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3>Sound System Pernikahan</h3>
+                    <p>Solusi audio lengkap untuk pernikahan Anda, dari upacara sakral hingga resepsi meriah.</p>
+                    <ul class="service-features">
+                        <li>2 Speaker utama 1000W</li>
+                        <li>Microphone wireless untuk MC dan pasangan</li>
+                        <li>Background music selama acara</li>
+                        <li>Operator profesional</li>
+                        <li>Setup dan breakdown</li>
+                    </ul>
+                    <div class="service-price">Mulai Rp 3.500.000</div>
+                    <p class="price-note">*Harga tergantung durasi dan lokasi</p>
+                    <a href="https://wa.me/6285353222333?text=Halo%20Iyan%20Parkin,%20saya%20tertarik%20dengan%20Layanan%20Sound%20System%20Pernikahan" target="_blank" class="btn">Pesan Sekarang</a>
+                </div>
+
+                <div class="service-card" data-category="concert">
+                    <div class="service-icon">
+                        <i class="fas fa-guitar"></i>
+                    </div>
+                    <h3>Sound System Konser</h3>
+                    <p>Sistem audio profesional untuk konser live, festival, dan pertunjukan musik.</p>
+                    <ul class="service-features">
+                        <li>Line array speaker system</li>
+                        <li>Subwoofer 18" multiple</li>
+                        <li>Mixing console 32+ channel</li>
+                        <li>Monitor panggung</li>
+                        <li>Sound engineer berpengalaman</li>
+                    </ul>
+                    <div class="service-price">Mulai Rp 8.000.000</div>
+                    <p class="price-note">*Termasuk setup teknis lengkap</p>
+                    <a href="https://wa.me/6285353222333?text=Halo%20Iyan%20Parkin,%20saya%20tertarik%20dengan%20Layanan%20Sound%20System%20Konser" target="_blank" class="btn">Pesan Sekarang</a>
+                </div>
+
+                <div class="service-card" data-category="corporate">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Sound System Korporat</h3>
+                    <p>Layanan audio untuk seminar, konferensi, rapat, dan acara perusahaan.</p>
+                    <ul class="service-features">
+                        <li>Speaker portable berkualitas</li>
+                        <li>Microphone wireless/lapel</li>
+                        <li>Mixing console 8-16 channel</li>
+                        <li>Presentation audio support</li>
+                        <li>Operator selama acara</li>
+                    </ul>
+                    <div class="service-price">Mulai Rp 2.000.000</div>
+                    <p class="price-note">*Paket setengah hari/full day</p>
+                    <a href="https://wa.me/6285353222333?text=Halo%20Iyan%20Parkin,%20saya%20tertarik%20dengan%20Layanan%20Sound%20System%20Korporat" target="_blank" class="btn">Pesan Sekarang</a>
+                </div>
+
+                <div class="service-card" data-category="technical">
+                    <div class="service-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Sound Engineering</h3>
+                    <p>Jasa sound engineering profesional untuk mixing dan mastering live.</p>
+                    <ul class="service-features">
+                        <li>Live mixing audio</li>
+                        <li>Sound tuning akustik ruangan</li>
+                        <li>Problem solving audio</li>
+                        <li>Quality control sound</li>
+                        <li>Technical consultation</li>
+                    </ul>
+                    <div class="service-price">Mulai Rp 1.500.000</div>
+                    <p class="price-note">*Per sesi/event</p>
+                    <a href="https://wa.me/6285353222333?text=Halo%20Iyan%20Parkin,%20saya%20tertarik%20dengan%20Layanan%20Sound%20Engineering" target="_blank" class="btn">Pesan Sekarang</a>
+                </div>
+
+                <div class="service-card" data-category="wedding">
+                    <div class="service-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>DJ & Entertainment</h3>
+                    <p>Layanan DJ lengkap dengan sound system untuk pesta dan entertainment.</p>
+                    <ul class="service-features">
+                        <li>DJ set lengkap</li>
+                        <li>Sound system khusus dance</li>
+                        <li>Lighting effects</li>
+                        <li>Music request service</li>
+                        <li>MC optional</li>
+                    </ul>
+                    <div class="service-price">Mulai Rp 4.500.000</div>
+                    <p class="price-note">*Termasuk DJ profesional</p>
+                    <a href="https://wa.me/6285353222333?text=Halo%20Iyan%20Parkin,%20saya%20tertarik%20dengan%20Layanan%20DJ%20%26%20Entertainment" target="_blank" class="btn">Pesan Sekarang</a>
+                </div>
+
+                <div class="service-card" data-category="technical">
+                    <div class="service-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3>Audio Monitoring</h3>
+                    <p>Sistem monitoring profesional untuk band, musisi, dan live performance.</p>
+                    <ul class="service-features">
+                        <li>Monitor wedge/personal</li>
+                        <li>In-ear monitoring system</li>
+                        <li>Monitor mixing console</li>
+                        <li>Wireless monitoring option</li>
+                        <li>Monitor engineer</li>
+                    </ul>
+                    <div class="service-price">Mulai Rp 2.500.000</div>
+                    <p class="price-note">*Sewa per set/event</p>
+                    <a href="https://wa.me/6285353222333?text=Halo%20Iyan%20Parkin,%20saya%20tertarik%20dengan%20Layanan%20Audio%20Monitoring" target="_blank" class="btn">Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipment Showcase -->
+    <section id="equipment">
+        <div class="container">
+            <h2>Peralatan Profesional Kami</h2>
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-img">
+                        <img src="img/line-array.jpg" alt="Line Array Speaker">
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Line Array Speaker</h3>
+                        <p>Sistem speaker premium untuk coverage suara optimal</p>
+                        <ul class="equipment-specs">
+                            <li>Power: 2000W per cabinet</li>
+                            <li>Coverage: 120° horizontal</li>
+                            <li>Brand: JBL Professional</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-img">
+                        <img src="img/digital-mixing.jpg" alt="Digital Mixer">
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Digital Mixing Console</h3>
+                        <p>Mixing console digital dengan efek built-in</p>
+                        <ul class="equipment-specs">
+                            <li>32 Input channels</li>
+                            <li>16 Output buses</li>
+                            <li>Brand: Yamaha CL5</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-img">
+                        <img src="img/wireless.jpg" alt="Wireless Microphone">
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Wireless Microphone</h3>
+                        <p>Sistem microphone wireless profesional</p>
+                        <ul class="equipment-specs">
+                            <li>Frequency: UHF 500-900MHz</li>
+                            <li>Range: 100 meter</li>
+                            <li>Brand: Shure, Sennheiser</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="equipment-card">
+                    <div class="equipment-img">
+                        <img src="img/stage.jpg" alt="Stage Monitor">
+                    </div>
+                    <div class="equipment-info">
+                        <h3>Stage Monitor</h3>
+                        <p>Monitor panggung untuk musisi dan performers</p>
+                        <ul class="equipment-specs">
+                            <li>Power: 500W per unit</li>
+                            <li>Type: Wedge/Floor monitor</li>
+                            <li>Brand: EV, Mackie</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process">
+        <div class="container">
+            <h2>Proses Pemesanan</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Konsultasi</h3>
+                    <p>Diskusikan kebutuhan acara Anda dengan tim kami. Kami akan memberikan rekomendasi terbaik.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Penawaran</h3>
+                    <p>Kami akan mengirimkan penawaran detail dengan harga transparan dan spesifikasi peralatan.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Booking</h3>
+                    <p>Konfirmasi pemesanan. Kami akan blokir jadwal dan persiapkan peralatan.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Eksekusi</h3>
+                    <p>Tim kami akan setup di lokasi, operasikan selama acara, dan breakdown setelah selesai.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>Testimoni Klien</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                Sound system dari CV.Parkin Production sangat bagus untuk acara pernikahan kami. Suara jelas dan tidak ada feedback. Timnya profesional dan responsif. Recommended!
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-img">
+                                    <img src="img/ini-kan-my.jpg" alt="Rina">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Waguri & Ragil</h4>
+                                    <div class="author-event">Pernikahan, Banjar</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                Untuk konser amal kami, CV.Parkin Production memberikan layanan luar biasa. Sound engineering-nya top! Suara band sangat hidup dan balance.
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-img">
+                                    <img src="img/lebron.jpg" alt="Budi James">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Budi James</h4>
+                                    <div class="author-event">Konser Amal, Ngawi</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">
+                                Seminar perusahaan kami dalam mengembangkan anime one frame man berjalan lancar berkat sound system yang bagus. Microphone wireless bekerja sempurna untuk semua speaker.
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-img">
+                                    <img src="img/jcstaff.png" alt="PT Sejahtera">
+                                </div>
+                                <div class="author-info">
+                                    <h4>JC Staff</h4>
+                                    <div class="author-event">Seminar Korporat, Bogor</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="services-cta">
+        <div class="container">
+            <h2>Siap Memesan Layanan?</h2>
+            <p>Pilih layanan yang sesuai dengan kebutuhan acara Anda. Konsultasi gratis dengan tim ahli kami.</p>
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="contact.html" class="btn">Konsultasi Gratis</a>
+                <a href="gallery.html" class="btn btn-secondary">Lihat Galeri Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">CV.Parkin Production</div>
+            <p>Jasa Sound System Profesional untuk Semua Jenis Acara</p>
+            <div class="copyright">
+                &copy; 2025 CV.Parkin Production Sound System. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/6285353222333" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Create background animation elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const background = document.getElementById('background-animation');
+            
+            // Create sound waves
+            for (let i = 0; i < 5; i++) {
+                const wave = document.createElement('div');
+                wave.classList.add('sound-wave');
+                wave.style.left = `${Math.random() * 100}%`;
+                wave.style.top = `${Math.random() * 100}%`;
+                wave.style.animationDelay = `${i * 2}s`;
+                background.appendChild(wave);
+            }
+            
+            // Create equalizer bars
+            for (let i = 0; i < 20; i++) {
+                const bar = document.createElement('div');
+                bar.classList.add('equalizer-bar');
+                bar.style.left = `${i * 5}%`;
+                bar.style.animationDelay = `${Math.random() * 2}s`;
+                background.appendChild(bar);
+            }
+            
+            // =============================================
+            // SIMPLE VINYL PLAYER
+            // =============================================
+            
+            // Elements
+            const vinylPlayer = document.getElementById('vinylPlayerSimple');
+            const vinylSimple = document.getElementById('vinylSimple');
+            const musicText = document.getElementById('musicText');
+            const musicPulse = document.getElementById('musicPulse');
+            
+            // Audio state
+            let audio = null;
+            let isPlaying = false;
+            
+            // Audio paths
+            const musicPaths = [
+                'sound/aku-iki-fullbass.mp3',
+                'sound/music.mp3',
+                './sound/fun-music.mp3'
+            ];
+            
+            // Fungsi untuk membuat audio element
+            function createAudio() {
+                if (audio) return audio;
+                
+                // Coba semua path
+                for (let path of musicPaths) {
+                    try {
+                        const testAudio = new Audio(path);
+                        testAudio.volume = 0.4;
+                        testAudio.preload = 'auto';
+                        audio = testAudio;
+                        console.log('Audio loaded from:', path);
+                        break;
+                    } catch (error) {
+                        console.log('Failed to load from:', path);
+                        continue;
+                    }
+                }
+                
+                return audio;
+            }
+            
+            // Setup audio events
+            function setupAudioEvents() {
+                if (!audio) return;
+                
+                audio.addEventListener('ended', function() {
+                    vinylSimple.classList.remove('playing');
+                    musicPulse.classList.remove('active');
+                    musicText.textContent = 'Putar lagi?';
+                    isPlaying = false;
+                    vinylSimple.style.boxShadow = '0 0 10px rgba(0,0,0,0.8), inset 0 0 15px rgba(0,0,0,0.9)';
+                });
+            }
+            
+            // Fungsi play/pause
+            function togglePlayPause() {
+                // Pastikan audio sudah dibuat
+                if (!audio) {
+                    audio = createAudio();
+                    setupAudioEvents();
+                }
+                
+                if (isPlaying) {
+                    // Pause musik
+                    audio.pause();
+                    vinylSimple.classList.remove('playing');
+                    musicPulse.classList.remove('active');
+                    musicText.textContent = 'Putar musik!';
+                    vinylSimple.style.boxShadow = '0 0 10px rgba(0,0,0,0.8), inset 0 0 15px rgba(0,0,0,0.9)';
+                } else {
+                    // Play musik
+                    try {
+                        audio.play().then(() => {
+                            vinylSimple.classList.add('playing');
+                            musicPulse.classList.add('active');
+                            musicText.textContent = 'Musik sedang diputar!';
+                            isPlaying = true;
+                            vinylSimple.style.boxShadow = '0 0 15px rgba(255,107,53,0.6), inset 0 0 15px rgba(0,0,0,0.9)';
+                            
+                            vinylPlayer.style.transform = 'scale(1.05)';
+                            setTimeout(() => {
+                                vinylPlayer.style.transform = 'scale(1)';
+                            }, 300);
+                            
+                        }).catch(error => {
+                            console.error('Play error:', error);
+                            musicText.textContent = 'Klik lagi untuk coba';
+                            audio = null;
+                            isPlaying = false;
+                        });
+                    } catch (error) {
+                        console.error('Error in togglePlayPause:', error);
+                        musicText.textContent = 'Error sistem audio';
+                        isPlaying = false;
+                    }
+                }
+            }
+            
+            // Event listener untuk vinyl player
+            vinylPlayer.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                vinylSimple.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    vinylSimple.style.transform = 'scale(1)';
+                }, 200);
+                
+                togglePlayPause();
+            });
+            
+            // Pre-create audio pada interaksi pertama
+            document.addEventListener('click', function initAudioOnInteraction() {
+                if (!audio) {
+                    audio = createAudio();
+                    setupAudioEvents();
+                }
+            }, { once: true });
+            
+            // =============================================
+            // SERVICE CATEGORY FILTER
+            // =============================================
+            
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const category = this.dataset.category;
+                    
+                    // Filter service cards
+                    serviceCards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'flex';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // =============================================
+            // TESTIMONIAL SLIDER
+            // =============================================
+            
+            const testimonialTrack = document.getElementById('testimonialTrack');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slides = document.querySelectorAll('.testimonial-slide');
+            
+            let currentSlide = 0;
+            const slideCount = slides.length;
+            
+            function updateSlider() {
+                testimonialTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }
+            
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slideCount;
+                updateSlider();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+                updateSlider();
+            });
+            
+            // Auto slide every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slideCount;
+                updateSlider();
+            }, 5000);
+            
+            // =============================================
+            // MOBILE NAVIGATION
+            // =============================================
+            
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+                this.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav-content') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+            
+            // =============================================
+            // OTHER FUNCTIONALITY
+            // =============================================
+            
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Keyboard shortcut
+            document.addEventListener('keydown', function(e) {
+                if (e.code === 'Space' && !e.target.matches('input, textarea')) {
+                    e.preventDefault();
+                    togglePlayPause();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV.Parkin Production - Jasa Sound System Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff6b35;
+            --secondary: #1a1a2e;
+            --accent: #0f3460;
+            --light: #f8f9fa;
+            --dark: #16213e;
+            --gray: #e9ecef;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--light);
+            background-color: var(--secondary);
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            -webkit-tap-highlight-color: rgba(255, 107, 53, 0.3);
+        }
+
+        .btn:hover {
+            background: #ff8535;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* Background Animation */
+        #background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .sound-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            animation: pulse 8s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+            100% {
+                transform: scale(1.2);
+                opacity: 0.15;
+            }
+        }
+
+        .equalizer-bar {
+            position: absolute;
+            bottom: 0;
+            width: 10px;
+            background: var(--primary);
+            animation: equalizer 1.5s infinite ease-in-out;
+            opacity: 0.3;
+        }
+
+        @keyframes equalizer {
+            0%, 100% {
+                height: 10px;
+            }
+            50% {
+                height: 80px;
+            }
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(26, 26, 46, 0.95);
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background: rgba(26, 26, 46, 0.98);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .logo span {
+            color: var(--light);
+        }
+
+        /* Piringan Hitam Simpel di Navbar */
+        .vinyl-player-simple {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 2;
+            -webkit-tap-highlight-color: rgba(255, 107, 53, 0.2);
+        }
+
+        .vinyl-simple {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: 
+                radial-gradient(circle at 30% 30%, #333 0%, #000 70%),
+                repeating-radial-gradient(
+                    circle at center,
+                    transparent 0px,
+                    transparent 3px,
+                    rgba(255,255,255,0.05) 3px,
+                    rgba(255,255,255,0.05) 4px
+                );
+            position: relative;
+            box-shadow: 
+                0 0 10px rgba(0,0,0,0.8),
+                inset 0 0 15px rgba(0,0,0,0.9);
+            transition: transform 0.5s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .vinyl-simple.playing {
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .vinyl-center-simple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(255,107,53,0.8);
+        }
+
+        .vinyl-label-simple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, #ff6b35, #ff8535);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 8px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+            padding: 2px;
+        }
+
+        .music-text {
+            font-size: 0.85rem;
+            color: var(--light);
+            white-space: nowrap;
+            opacity: 0.8;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .vinyl-player-simple:hover .music-text {
+            color: var(--primary);
+            opacity: 1;
+        }
+
+        .vinyl-player-simple:hover .vinyl-simple {
+            box-shadow: 
+                0 0 15px rgba(255,107,53,0.4),
+                inset 0 0 15px rgba(0,0,0,0.9);
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex: 1;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin-right: 20px;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--light);
+            cursor: pointer;
+            z-index: 2;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Efek visual ketika musik diputar */
+        .music-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 107, 53, 0.2);
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .music-pulse.active {
+            animation: pulseEffect 1.5s ease-out infinite;
+        }
+
+        @keyframes pulseEffect {
+            0% {
+                width: 45px;
+                height: 45px;
+                opacity: 0.7;
+            }
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+
+        /* Hero Section dengan Background Gambar */
+        #hero {
+            padding-top: 150px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('img/sound-system.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+        
+        /* Overlay untuk meningkatkan keterbacaan teks */
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                        rgba(26, 26, 46, 0.85) 0%, 
+                        rgba(15, 52, 96, 0.75) 100%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-btns {
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-btns .btn {
+            margin-right: 15px;
+            margin-bottom: 15px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        /* About Section */
+        #about {
+            background: rgba(15, 52, 96, 0.3);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            min-height: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        #services {
+            background: rgba(22, 33, 62, 0.5);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+        }
+
+        /* Products Section */
+        #products {
+            background: rgba(15, 52, 96, 0.3);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .product-features li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .product-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .product-btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: rgba(22, 33, 62, 0.5);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: var(--light);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            margin-right: 15px;
+            color: var(--light);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* WhatsApp Popup Success - FIXED */
+        .whatsapp-success {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .whatsapp-success.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .success-box {
+            background: var(--secondary);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: var(--shadow);
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: #25D366;
+            margin-bottom: 20px;
+        }
+
+        .success-box h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .success-box p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .message-preview {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: left;
+            font-size: 0.9rem;
+            max-height: 200px;
+            overflow-y: auto;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+
+        .message-preview p {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .copy-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .copy-btn:hover {
+            background: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .nav-content {
+                justify-content: space-between;
+                width: 100%;
+            }
+            
+            .vinyl-player-simple {
+                order: 2;
+                margin-left: auto;
+            }
+            
+            .nav-links {
+                margin-right: 10px;
+            }
+            
+            .nav-links li {
+                margin-left: 20px;
+            }
+            
+            .about-image {
+                min-height: 250px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+                order: 3;
+            }
+            
+            .vinyl-player-simple {
+                order: 2;
+                margin-left: auto;
+                margin-right: 15px;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: var(--secondary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 20px 0;
+                transform: translateX(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                z-index: 1;
+                margin: 0;
+            }
+            
+            .nav-links.active {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.3rem;
+            }
+            
+            h1 {
+                font-size: 2.3rem;
+                text-align: center;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .music-text {
+                display: none;
+            }
+            
+            .vinyl-simple {
+                width: 42px;
+                height: 42px;
+            }
+            
+            .vinyl-center-simple {
+                width: 11px;
+                height: 11px;
+            }
+            
+            .vinyl-label-simple {
+                width: 19px;
+                height: 19px;
+                font-size: 7px;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            /* About section mobile fix */
+            .about-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .about-text, .about-image {
+                width: 100%;
+                flex: none;
+            }
+            
+            .about-image {
+                min-height: 200px;
+                order: -1;
+            }
+            
+            .about-text h3 {
+                text-align: center;
+            }
+            
+            .about-text p {
+                text-align: justify;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+                text-align: center;
+            }
+            
+            .hero-btns {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                margin-right: 0;
+                margin-bottom: 15px;
+                width: 80%;
+                text-align: center;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .success-box {
+                padding: 25px 15px;
+                max-height: 85vh;
+            }
+            
+            .message-preview {
+                max-height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vinyl-player-simple {
+                margin-right: 10px;
+            }
+            
+            .vinyl-simple {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .logo {
+                font-size: 1.4rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            .about-image {
+                min-height: 180px;
+            }
+            
+            .service-card, .product-card {
+                padding: 20px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .social-links a {
+                margin-right: 10px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .success-box {
+                padding: 20px 15px;
+            }
+            
+            .success-icon {
+                font-size: 3rem;
+            }
+            
+            .success-box h3 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .vinyl-simple {
+                width: 38px;
+                height: 38px;
+            }
+            
+            .logo {
+                font-size: 1.3rem;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .success-box {
+                padding: 15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div id="background-animation"></div>
+
+    <!-- WhatsApp Success Popup - FIXED -->
+    <div class="whatsapp-success" id="whatsappSuccess">
+        <div class="success-box">
+            <div class="success-icon">
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <h3>Mengarahkan ke WhatsApp!</h3>
+            <p>Anda akan diarahkan ke WhatsApp CV.Parkin Production. Data yang Anda isi sudah otomatis terisi di pesan WhatsApp.</p>
+            <p>Jika tidak otomatis terbuka, salin pesan di bawah ini:</p>
+            
+            <div class="message-preview" id="messagePreview">
+                <!-- Pesan akan muncul di sini -->
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <button class="copy-btn" onclick="copyToClipboard()">
+                    <i class="fas fa-copy"></i> Salin Pesan
+                </button>
+                <button class="btn" onclick="closeSuccessPopup()" style="margin-left: 10px;">
+                    Tutup
+                </button>
+            </div>
+            
+            <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">
+                WhatsApp akan terbuka otomatis dalam 2 detik...
+            </p>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#hero" class="logo">CV.Parkin<span>Production</span></a>
+                
+                <div class="nav-content">
+                    <!-- Piringan Hitam Simpel -->
+                    <div class="vinyl-player-simple" id="vinylPlayerSimple">
+                        <div class="vinyl-simple" id="vinylSimple">
+                            <div class="vinyl-label-simple">IP</div>
+                            <div class="vinyl-center-simple"></div>
+                            <div class="music-pulse" id="musicPulse"></div>
+                        </div>
+                        <div class="music-text" id="musicText">Klik untuk musik!</div>
+                    </div>
+                    
+                    <ul class="nav-links">
+                        <li><a href="#hero">Beranda</a></li>
+                        <li><a href="about.html">Tentang</a></li>
+                        <li><a href="services.html">Layanan</a></li>
+                        <li><a href="gallery.html">Galeri</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                    </ul>
+                    
+                    <div class="mobile-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Sound System Profesional untuk Setiap Acara</h1>
+                <p>CV.Parkin Production menyediakan jasa sound system terbaik dengan kualitas audio premium untuk acara pernikahan, konser, seminar, dan berbagai acara lainnya. Pengalaman lebih dari 10 tahun di industri musik.</p>
+                <div class="hero-btns">
+                    <a href="gallery.html" class="btn">Lihat Galeri</a>
+                    <a href="contact.html" class="btn btn-secondary">Konsultasi Gratis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>Tentang Kami</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <!-- Ganti dengan gambar Anda: about.jpg -->
+                    <img src="img/iyan2.jpg" alt="Tentang CV.Parkin Production">
+                </div>
+                <div class="about-text">
+                    <h3>Mengapa Memilih CV.Parkin Production?</h3>
+                    <p>CV.Parkin Production didirikan oleh Iyan Parkin, seorang ahli sound system dengan pengalaman lebih dari 10 tahun di industri musik dan audio. Kami telah melayani ratusan acara, mulai dari pernikahan, konser, hingga acara perusahaan.</p>
+                    <p>Kami percaya bahwa kualitas audio yang baik dapat meningkatkan pengalaman dalam setiap acara. Dengan peralatan terbaru dan tim teknis yang berpengalaman, kami siap membuat acara Anda menjadi lebih berkesan.</p>
+                    <p>Visi kami adalah menjadi penyedia jasa sound system terpercaya dengan kualitas terbaik di Indonesia.</p>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="contact.html" class="btn">Hubungi Kami</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Layanan Kami</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Sound System Acara</h3>
+                    <p>Penyewaan sound system lengkap untuk berbagai acara seperti pernikahan, konser, festival, dan pesta.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Sewa Mic & Speaker</h3>
+                    <p>Penyewaan microphone dan speaker berkualitas tinggi untuk presentasi, seminar, dan rapat.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3>Monitoring Audio</h3>
+                    <p>Layanan monitoring audio profesional untuk memastikan kualitas suara terbaik selama acara berlangsung.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Sound Engineering</h3>
+                    <p>Jasa sound engineering untuk mixing dan mastering audio live dengan teknologi terkini.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <h2>Paket Layanan & Produk</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Ganti dengan gambar Anda: paket-pernikahan.jpg -->
+                        <img src="img/acara.jpg" alt="Paket Acara">
+                    </div>
+                    <div class="product-info">
+                        <h3>Paket Acara</h3>
+                        <div class="product-price">Rp 3.500.000</div>
+                        <ul class="product-features">
+                            <li>2 Speaker utama 1000W</li>
+                            <li>4 Monitor panggung</li>
+                            <li>4 Microphone wireless</li>
+                            <li>Mixing console 16 channel</li>
+                            <li>Operator selama acara</li>
+                        </ul>
+                        <a href="https://wa.me/6285353222333?text=Halo%20Iyan%20Parkin,%20saya%20tertarik%20dengan%20Paket%20Acara" target="_blank" class="btn product-btn">Pesan via WhatsApp</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Ganti dengan gambar Anda: paket-konser.jpg -->
+                        <img src="img/konser1.jpeg" alt="Paket Konser">
+                    </div>
+                    <div class="product-info">
+                        <h3>Paket Konser</h3>
+                        <div class="product-price">Rp 8.000.000</div>
+                        <ul class="product-features">
+                            <li>4 Line array speaker</li>
+                            <li>Subwoofer 18" (4 unit)</li>
+                            <li>Mixing console 32 channel</li>
+                            <li>Full sound engineering</li>
+                            <li>Teknisi selama acara</li>
+                        </ul>
+                        <a href="https://wa.me/6285353222333?text=Halo%20Iyan%20Parkin,%20saya%20tertarik%20dengan%20Paket%20Konser" target="_blank" class="btn product-btn">Pesan via WhatsApp</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <!-- Ganti dengan gambar Anda: paket-seminar.jpg -->
+                        <img src="img/seminar.jpeg" alt="Paket Seminar">
+                    </div>
+                    <div class="product-info">
+                        <h3>Paket Seminar</h3>
+                        <div class="product-price">Rp 2.000.000</div>
+                        <ul class="product-features">
+                            <li>2 Speaker portable 500W</li>
+                            <li>3 Microphone wireless</li>
+                            <li>Mixing console 8 channel</li>
+                            <li>Projector & screen</li>
+                            <li>Operator setengah hari</li>
+                        </ul>
+                        <a href="https://wa.me/6285353222333?text=Halo%20Iyan%20Parkin,%20saya%20tertarik%20dengan%20Paket%20Seminar" target="_blank" class="btn product-btn">Pesan via WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informasi Kontak</h3>
+                    <p>Hubungi kami untuk konsultasi gratis atau pemesanan layanan sound system.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Alamat</h4>
+                            <p>Jl. Jawara, Pasirnagara, Cibeureum, Kota Banjar, Jawa Barat 46313, Indonesia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Telepon</h4>
+                            <p>+62 853-5322-2333</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@iyanparkin.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/risdiyan.parkinsound.7"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Kirim Pesan</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="nama" placeholder="Nama Lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subjek" placeholder="Subjek" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="pesan" placeholder="Pesan Anda" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Kirim Pesan via WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">CV.Parkin Production</div>
+            <p>Jasa Sound System Profesional untuk Semua Jenis Acara</p>
+            <div class="copyright">
+                &copy; 2025 CV.Parkin Production Sound System. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/6285353222333" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Create background animation elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const background = document.getElementById('background-animation');
+            
+            // Create sound waves
+            for (let i = 0; i < 5; i++) {
+                const wave = document.createElement('div');
+                wave.classList.add('sound-wave');
+                wave.style.left = `${Math.random() * 100}%`;
+                wave.style.top = `${Math.random() * 100}%`;
+                wave.style.animationDelay = `${i * 2}s`;
+                background.appendChild(wave);
+            }
+            
+            // Create equalizer bars
+            for (let i = 0; i < 20; i++) {
+                const bar = document.createElement('div');
+                bar.classList.add('equalizer-bar');
+                bar.style.left = `${i * 5}%`;
+                bar.style.animationDelay = `${Math.random() * 2}s`;
+                background.appendChild(bar);
+            }
+            
+            // =============================================
+            // SIMPLE VINYL PLAYER
+            // =============================================
+            
+            // Elements
+            const vinylPlayer = document.getElementById('vinylPlayerSimple');
+            const vinylSimple = document.getElementById('vinylSimple');
+            const musicText = document.getElementById('musicText');
+            const musicPulse = document.getElementById('musicPulse');
+            
+            // Audio state
+            let audio = null;
+            let isPlaying = false;
+            
+            // Audio paths
+            const musicPaths = [
+                'sound/aku-iki-fullbass.mp3',
+                'sound/music.mp3',
+                './sound/fun-music.mp3'
+            ];
+            
+            // Fungsi untuk membuat audio element
+            function createAudio() {
+                if (audio) return audio;
+                
+                // Coba semua path
+                for (let path of musicPaths) {
+                    try {
+                        const testAudio = new Audio(path);
+                        testAudio.volume = 0.4;
+                        testAudio.preload = 'auto';
+                        audio = testAudio;
+                        console.log('Audio loaded from:', path);
+                        break;
+                    } catch (error) {
+                        console.log('Failed to load from:', path);
+                        continue;
+                    }
+                }
+                
+                return audio;
+            }
+            
+            // Setup audio events
+            function setupAudioEvents() {
+                if (!audio) return;
+                
+                audio.addEventListener('ended', function() {
+                    vinylSimple.classList.remove('playing');
+                    musicPulse.classList.remove('active');
+                    musicText.textContent = 'Putar lagi?';
+                    isPlaying = false;
+                    vinylSimple.style.boxShadow = '0 0 10px rgba(0,0,0,0.8), inset 0 0 15px rgba(0,0,0,0.9)';
+                });
+            }
+            
+            // Fungsi play/pause
+            function togglePlayPause() {
+                // Pastikan audio sudah dibuat
+                if (!audio) {
+                    audio = createAudio();
+                    setupAudioEvents();
+                }
+                
+                if (isPlaying) {
+                    // Pause musik
+                    audio.pause();
+                    vinylSimple.classList.remove('playing');
+                    musicPulse.classList.remove('active');
+                    musicText.textContent = 'Putar musik!';
+                    vinylSimple.style.boxShadow = '0 0 10px rgba(0,0,0,0.8), inset 0 0 15px rgba(0,0,0,0.9)';
+                } else {
+                    // Play musik
+                    try {
+                        audio.play().then(() => {
+                            vinylSimple.classList.add('playing');
+                            musicPulse.classList.add('active');
+                            musicText.textContent = 'Musik sedang diputar!';
+                            isPlaying = true;
+                            vinylSimple.style.boxShadow = '0 0 15px rgba(255,107,53,0.6), inset 0 0 15px rgba(0,0,0,0.9)';
+                            
+                            vinylPlayer.style.transform = 'scale(1.05)';
+                            setTimeout(() => {
+                                vinylPlayer.style.transform = 'scale(1)';
+                            }, 300);
+                            
+                        }).catch(error => {
+                            console.error('Play error:', error);
+                            musicText.textContent = 'Klik lagi untuk coba';
+                            audio = null;
+                            isPlaying = false;
+                        });
+                    } catch (error) {
+                        console.error('Error in togglePlayPause:', error);
+                        musicText.textContent = 'Error sistem audio';
+                        isPlaying = false;
+                    }
+                }
+            }
+            
+            // Event listener untuk vinyl player
+            vinylPlayer.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                vinylSimple.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    vinylSimple.style.transform = 'scale(1)';
+                }, 200);
+                
+                togglePlayPause();
+            });
+            
+            // Pre-create audio pada interaksi pertama
+            document.addEventListener('click', function initAudioOnInteraction() {
+                if (!audio) {
+                    audio = createAudio();
+                    setupAudioEvents();
+                }
+            }, { once: true });
+            
+            // =============================================
+            // WHATSAPP FORM FUNCTIONALITY - FIXED
+            // =============================================
+            
+            const contactForm = document.getElementById('contactForm');
+            const whatsappSuccess = document.getElementById('whatsappSuccess');
+            const messagePreview = document.getElementById('messagePreview');
+            
+            // Ganti dengan nomor WhatsApp Anda
+            const whatsappNumber = '6285353222333';
+            let currentMessage = '';
+            
+            function closeSuccessPopup() {
+                whatsappSuccess.classList.remove('active');
+            }
+            
+            function copyToClipboard() {
+                navigator.clipboard.writeText(currentMessage).then(() => {
+                    alert('Pesan berhasil disalin!');
+                }).catch(err => {
+                    console.error('Gagal menyalin: ', err);
+                    alert('Gagal menyalin pesan. Silakan salin manual dari kotak di atas.');
+                });
+            }
+            
+            function showSuccessPopup(message) {
+                currentMessage = message;
+                
+                // Format pesan untuk preview
+                const formattedMessage = message.split('\n').map(line => {
+                    return `<p>${line}</p>`;
+                }).join('');
+                
+                messagePreview.innerHTML = formattedMessage;
+                whatsappSuccess.classList.add('active');
+                
+                // Scroll ke atas popup
+                document.querySelector('.success-box').scrollTop = 0;
+            }
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Ambil nilai dari form
+                    const nama = document.getElementById('nama').value;
+                    const email = document.getElementById('email').value;
+                    const subjek = document.getElementById('subjek').value;
+                    const pesan = document.getElementById('pesan').value;
+                    
+                    // Format pesan untuk WhatsApp
+                    const whatsappMessage = `Halo CV.Parkin Production Sound System!\n\nSaya ${nama}.\n\nSubjek: ${subjek}\n\nPesan:\n${pesan}\n\nEmail: ${email}\n\nSaya tertarik untuk berkonsultasi lebih lanjut.`;
+                    
+                    // Encode pesan untuk URL
+                    const encodedMessage = encodeURIComponent(whatsappMessage);
+                    
+                    // Buat URL WhatsApp
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                    
+                    // Tampilkan popup konfirmasi dengan preview pesan
+                    showSuccessPopup(whatsappMessage);
+                    
+                    // Buka WhatsApp setelah 2 detik
+                    setTimeout(() => {
+                        window.open(whatsappUrl, '_blank');
+                    }, 2000);
+                    
+                    // Reset form setelah 3 detik
+                    setTimeout(() => {
+                        contactForm.reset();
+                    }, 3000);
+                });
+            }
+            
+            // Close popup ketika klik di luar
+            whatsappSuccess.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeSuccessPopup();
+                }
+            });
+            
+            // =============================================
+            // MOBILE NAVIGATION
+            // =============================================
+            
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+                this.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav-content') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+            
+            // =============================================
+            // OTHER FUNCTIONALITY
+            // =============================================
+            
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if(this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Keyboard shortcut
+            document.addEventListener('keydown', function(e) {
+                if (e.code === 'Space' && !e.target.matches('input, textarea')) {
+                    e.preventDefault();
+                    togglePlayPause();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
