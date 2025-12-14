@@ -725,7 +725,7 @@
             }
         }
 
-        /* ===== RESPONSIVE STYLES ===== */
+        /* Responsive Styles */
         @media (max-width: 992px) {
             h1 {
                 font-size: 2.8rem;
@@ -735,24 +735,36 @@
                 font-size: 2.2rem;
             }
             
-            .history-timeline::before {
-                left: 30px;
+            .about-content {
+                flex-direction: column;
+                gap: 40px;
             }
             
-            .timeline-item {
-                flex-direction: row !important;
-                align-items: flex-start;
+            .contact-container {
+                flex-direction: column;
             }
             
-            .timeline-year {
-                flex: 0 0 100px;
-                text-align: left;
-                padding: 0;
-                margin-right: 30px;
+            .nav-content {
+                justify-content: space-between;
+                width: 100%;
             }
             
-            .timeline-dot {
-                left: 30px;
+            .vinyl-player-simple {
+                order: 2;
+                margin-left: auto;
+            }
+            
+            .nav-links {
+                margin-right: 10px;
+            }
+            
+            .nav-links li {
+                margin-left: 20px;
+            }
+            
+            .about-image {
+                min-height: 250px;
+                width: 100%;
             }
         }
 
@@ -804,6 +816,7 @@
             
             h1 {
                 font-size: 2.3rem;
+                text-align: center;
             }
             
             h2 {
@@ -823,24 +836,89 @@
                 height: 42px;
             }
             
-            .vm-grid, .team-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .vinyl-center-simple {
+                width: 11px;
+                height: 11px;
             }
             
-            .vm-card, .team-card {
-                padding: 25px 20px;
+            .vinyl-label-simple {
+                width: 19px;
+                height: 19px;
+                font-size: 7px;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            /* About section mobile fix */
+            .about-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .about-text, .about-image {
+                width: 100%;
+                flex: none;
+            }
+            
+            .about-image {
+                min-height: 200px;
+                order: -1;
+            }
+            
+            .about-text h3 {
+                text-align: center;
+            }
+            
+            .about-text p {
+                text-align: justify;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+                text-align: center;
+            }
+            
+            .hero-btns {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btns .btn {
+                margin-right: 0;
+                margin-bottom: 15px;
+                width: 80%;
+                text-align: center;
             }
             
             section {
                 padding: 60px 0;
             }
+            
+            .success-box {
+                padding: 25px 15px;
+                max-height: 85vh;
+            }
+            
+            .message-preview {
+                max-height: 150px;
+            }
         }
 
         @media (max-width: 480px) {
+            .vinyl-player-simple {
+                margin-right: 10px;
+            }
+            
             .vinyl-simple {
                 width: 40px;
                 height: 40px;
+            }
+            
+            .logo {
+                font-size: 1.4rem;
             }
             
             h1 {
@@ -851,13 +929,36 @@
                 font-size: 1.5rem;
             }
             
-            .timeline-year {
-                flex: 0 0 80px;
+            h3 {
+                font-size: 1.3rem;
             }
             
-            .year {
-                font-size: 1rem;
-                padding: 6px 15px;
+            .about-image {
+                min-height: 180px;
+            }
+            
+            .service-card, .product-card {
+                padding: 20px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .social-links a {
+                margin-right: 10px;
+                width: 45px;
+                height: 45px;
             }
             
             .whatsapp-float {
@@ -866,6 +967,37 @@
                 font-size: 1.5rem;
                 bottom: 20px;
                 right: 20px;
+            }
+            
+            .success-box {
+                padding: 20px 15px;
+            }
+            
+            .success-icon {
+                font-size: 3rem;
+            }
+            
+            .success-box h3 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .vinyl-simple {
+                width: 38px;
+                height: 38px;
+            }
+            
+            .logo {
+                font-size: 1.3rem;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .success-box {
+                padding: 15px 10px;
             }
         }
     </style>
